@@ -5,6 +5,8 @@ perl -MMIME::Base64 -ne 'my $lines =  decode_base64($_); my @values = split( "--
 perl -MMIME::Base64 -ne 'my $lines =  decode_base64($_); my @values = split( "---" , $lines ); print @values[0]; print " "; print @values[1];print "\n";' songs_base64.txt > songs_simple.txt
 #perl -MMIME::Base64 -ne 'my $lines =  decode_base64($_); my @values = split( "---" , $lines ); @values[0] =~s/&|\.|\,|(\(Part.*?)\)|Pt/g; @values[1] =~s/&|\.|\,|(\(Part.*?)\)|Pt/g; print @values[0]; print " "; print @values[1];print "\n";' songs_base64.txt > songs_simple.txt
 
+# split -l 500 -d songs_simple.txt
+
 # /&|\.|\,|(\(Part.*?)\)|Pt/g
 # Dueling Banjos Eric Weissberg & Steve Mandell
 # Six Three Four Five Seven Eight Nine Wilson Pickett
